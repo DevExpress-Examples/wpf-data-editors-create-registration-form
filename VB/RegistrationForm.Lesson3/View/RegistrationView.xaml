@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="RegistrationForm.View.RegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:ViewModel="clr-namespace:RegistrationForm.ViewModel"
+             xmlns:DataModel="clr-namespace:RegistrationForm.DataModel"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="400"
+             DataContext="{dxmvvm:ViewModelSource {x:Type ViewModel:RegistrationViewModel}}">
+    <UserControl.Resources>
+        <Style x:Key="labelStyle" TargetType="dxlc:LayoutItemLabel">
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="itemStyle" TargetType="dxlc:LayoutItem">
+            <Setter Property="LabelPosition" Value="Top"/>
+            <Setter Property="LabelStyle" Value="{StaticResource labelStyle}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <dxlc:LayoutControl Orientation="Vertical" ItemStyle="{StaticResource itemStyle}" ItemSpace="10">
+            <dxlc:LayoutGroup ItemSpace="10">
+                <dxlc:LayoutItem Label="Name">
+                    <dxe:TextEdit EditValue="{Binding FirstName}" NullText="FIRST"/>
+                </dxlc:LayoutItem>
+                <dxe:TextEdit VerticalAlignment="Bottom" EditValue="{Binding LastName}" NullText="LAST"/>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutItem Label="Email">
+                <dxe:TextEdit EditValue="{Binding Email}" MaskType="RegEx"
+                              Mask="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+                              MaskIgnoreBlank="True" InvalidValueBehavior="AllowLeaveEditor" />
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="Create a password">
+                <dxe:PasswordBoxEdit EditValue="{Binding Password}" />
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="Confirm your password">
+                <dxe:PasswordBoxEdit EditValue="{Binding ConfirmPassword}" />
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="Birthday">
+                <dxe:DateEdit EditValue="{Binding Birthday}" InvalidValueBehavior="AllowLeaveEditor"
+                              MinValue="{Binding MinBirthday}" MaxValue="{Binding MaxBirthday}">
+                    <dxe:DateEdit.StyleSettings>
+                        <dxe:DateEditPickerStyleSettings/>
+                    </dxe:DateEdit.StyleSettings>
+                </dxe:DateEdit>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutItem Label="Gender">
+                <dxe:ComboBoxEdit EditValue="{Binding Gender}" NullText="I am..."
+                                  ItemsSource="{x:Static Member=DataModel:GenderList.Source}" 
+                                  ValueMember="ID" DisplayMember="Description">
+                    <dxe:ComboBoxEdit.NullValue>
+                        <sys:Int32>-1</sys:Int32>
+                    </dxe:ComboBoxEdit.NullValue>
+                </dxe:ComboBoxEdit>
+            </dxlc:LayoutItem>
+            <Button Content="Register" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="80" 
+                    Command="{Binding AddEmployeeCommand}" />
+        </dxlc:LayoutControl>
+    </Grid>
+</UserControl>

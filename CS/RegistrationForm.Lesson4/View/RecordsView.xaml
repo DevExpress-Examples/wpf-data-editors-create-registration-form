@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="RegistrationForm.View.RecordsView" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:ViewModel="clr-namespace:RegistrationForm.ViewModel"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="400"
+             DataContext="{dxmvvm:ViewModelSource ViewModel:RecordsViewModel}">
+    <Grid>
+        <dxg:GridControl Name="grid" AutoPopulateColumns="True" ItemsSource="{Binding Employees}">
+            <dxg:GridControl.View>
+                <dxg:TableView Name="view" ShowGroupPanel="False" AllowEditing="False" AutoWidth="True"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>
