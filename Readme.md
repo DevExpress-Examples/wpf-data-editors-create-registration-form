@@ -12,8 +12,6 @@ This example is the application created in the [Create a Registration Form](http
 
 This project is a draft application connected to a database. The project contains two predefined views: **MainView** with the [DXTabControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.DXTabControl) and **RecordsView** with the [GridControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridControl):
 
-![image](https://user-images.githubusercontent.com/65009440/226886831-eca62b70-d8e0-437f-8e30-38ad700eb576.png)
-
 ### Files to Review
 
 * [MainView.xaml](./CS/RegistrationForm.BaseProject/View/MainView.xaml) (VB: [MainView.xaml](./VB/RegistrationForm.BaseProject/View/MainView.xaml))
