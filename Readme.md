@@ -6,7 +6,7 @@
 
 # WPF Data Editors - Create a Registration Form
 
-This example is the application created in the [Create a Registration Form](https://docs.devexpress.com/WPF/17675/controls-and-libraries/data-editors/getting-started/how-to-create-a-registration-form) tutorial. The solution includes projects for each completed tutorial step.
+This example is the application from the [Create a Registration Form](https://docs.devexpress.com/WPF/17675/controls-and-libraries/data-editors/getting-started/how-to-create-a-registration-form) tutorial. The solution includes projects for each completed tutorial step.
 
 ## BaseProject
 
