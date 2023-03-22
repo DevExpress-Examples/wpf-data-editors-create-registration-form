@@ -1,29 +1,32 @@
-﻿Imports DevExpress.Mvvm
+Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.DataAnnotations
 Imports DevExpress.Mvvm.POCO
 Imports RegistrationForm.DataModel
 Imports System.Collections.Generic
 
 Namespace RegistrationForm.ViewModel
-    <POCOViewModel> _
+
+    <POCOViewModel>
     Public Class RecordsViewModel
+
         Public Shared Function Create() As RecordsViewModel
             Return ViewModelSource.Create(Function() New RecordsViewModel())
         End Function
+
         Protected Sub New()
-            Messenger.Default.Register(Of DBEmployeesChangedMessage)(Me, AddressOf OnDBEmployeesChanged)
+            Call Messenger.Default.Register(Me, New System.Action(Of DBEmployeesChangedMessage)(AddressOf OnDBEmployeesChanged))
             Employees = New List(Of Employee)()
-            If Not Me.IsInDesignMode() Then
-                InitializeEmployees()
-            End If
+            If Not IsInDesignMode() Then InitializeEmployees()
         End Sub
+
         Private Sub InitializeEmployees()
-            Employees = EmployeesModelHelper.GetEmployees()
+            Employees = GetEmployees()
         End Sub
+
         Private Sub OnDBEmployeesChanged(ByVal message As DBEmployeesChangedMessage)
             InitializeEmployees()
         End Sub
 
-        Public Property Employees() As List(Of Employee)
+        Public Overridable Property Employees As List(Of Employee)
     End Class
 End Namespace

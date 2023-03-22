@@ -1,16 +1,14 @@
-﻿Imports DevExpress.Mvvm
-Imports System
+Imports DevExpress.Mvvm
 Imports System.Collections.Generic
 Imports System.Linq
 
 Namespace RegistrationForm.DataModel
-    Public NotInheritable Class EmployeesModelHelper
 
-        Private Sub New()
-        End Sub
+    Public Module EmployeesModelHelper
 
-        Private Shared Entities As New EmployeesDBEntities()
-        Public Shared Sub AddNewEmployee(ByVal firstName As String, ByVal lastName As String, ByVal email As String, ByVal password As String, ByVal birthday As Date, ByVal gender As Integer)
+        Private Entities As EmployeesDBEntities = New EmployeesDBEntities()
+
+        Public Sub AddNewEmployee(ByVal firstName As String, ByVal lastName As String, ByVal email As String, ByVal password As String, ByVal birthday As Date, ByVal gender As Integer)
             Dim emp As Employee = Entities.Employees.Create()
             emp.FirstName = firstName
             emp.LastName = lastName
@@ -18,15 +16,16 @@ Namespace RegistrationForm.DataModel
             emp.Password = password
             emp.Birthday = birthday
             emp.Gender = gender
-
             Entities.Employees.Add(emp)
-            Entities.SaveChanges()
-            Messenger.Default.Send(New DBEmployeesChangedMessage())
+            Call Entities.SaveChanges()
+            Call Messenger.Default.Send(New DBEmployeesChangedMessage())
         End Sub
-        Public Shared Function GetEmployees() As List(Of Employee)
+
+        Public Function GetEmployees() As List(Of Employee)
             Return Entities.Employees.ToList()
         End Function
-    End Class
+    End Module
+
     Public Class DBEmployeesChangedMessage
     End Class
 End Namespace
