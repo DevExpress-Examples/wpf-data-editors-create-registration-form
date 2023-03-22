@@ -1,7 +1,7 @@
-﻿using DevExpress.Xpf.Core;
+﻿using System.Windows;
 
 namespace RegistrationForm {
-    public partial class MainWindow : DXWindow {
+    public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
         }

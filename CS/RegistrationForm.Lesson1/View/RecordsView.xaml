@@ -9,7 +9,7 @@
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="400"
              DataContext="{dxmvvm:ViewModelSource ViewModel:RecordsViewModel}">
     <Grid>
-        <dxg:GridControl Name="grid" AutoPopulateColumns="True" ItemsSource="{Binding Employees}">
+        <dxg:GridControl Name="grid" AutoGenerateColumns="AddNew" ItemsSource="{Binding Employees}">
             <dxg:GridControl.View>
                 <dxg:TableView Name="view" ShowGroupPanel="False" AllowEditing="False" AutoWidth="True"/>
             </dxg:GridControl.View>

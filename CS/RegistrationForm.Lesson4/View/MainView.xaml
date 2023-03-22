@@ -15,7 +15,7 @@
     <Grid x:Name="root">
         <dx:DXTabControl TabContentCacheMode="CacheAllTabs">
             <dx:DXTabControl.View>
-                <dx:TabControlScrollView HeaderLocation="Bottom" HeaderOrientation="Horizontal" ScrollButtonsShowMode="Never"/>
+                <dx:TabControlScrollView HeaderLocation="Bottom" HeaderOrientation="Horizontal" ScrollButtonShowMode="Never"/>
             </dx:DXTabControl.View>
             <dx:DXTabItem Header="Registration Form">
                 <View:RegistrationView Width="300" dxmvvm:ViewModelExtensions.ParentViewModel="{Binding ElementName=root, Path=DataContext}"/>

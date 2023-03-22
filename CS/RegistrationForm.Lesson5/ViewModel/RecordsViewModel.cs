@@ -23,6 +23,6 @@ namespace RegistrationForm.ViewModel {
             InitializeEmployees();
         }
 
-        public List<Employee> Employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
     }
 }
