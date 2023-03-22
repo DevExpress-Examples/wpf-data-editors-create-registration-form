@@ -1,11 +1,12 @@
-﻿Imports System.Windows.Controls
+Imports System.Windows.Controls
 
 Namespace RegistrationForm.View
-    Partial Public Class RecordsView
+
+    Public Partial Class RecordsView
         Inherits UserControl
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
     End Class
 End Namespace

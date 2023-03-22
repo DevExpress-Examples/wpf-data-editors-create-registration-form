@@ -1,11 +1,12 @@
-﻿Imports DevExpress.Xpf.Core
+Imports DevExpress.Xpf.Core
 
 Namespace RegistrationForm
-    Partial Public Class MainWindow
+
+    Public Partial Class MainWindow
         Inherits DXWindow
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
     End Class
 End Namespace
