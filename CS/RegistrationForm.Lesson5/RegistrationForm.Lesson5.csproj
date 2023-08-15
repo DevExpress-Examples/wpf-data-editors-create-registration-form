@@ -67,7 +67,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Images.v22.2">
-	  <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Pdf.v22.2.Core">
@@ -98,17 +98,17 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Xpf.Printing.v22.2">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.Xpf.Grid.v22.2">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.Xpf.Grid.v22.2.Core">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.Xpf.LayoutControl.v22.2">
-	  <SpecificVersion>False</SpecificVersion>
-	</Reference>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.Xpf.Themes.MetropolisLight.v22.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -147,7 +147,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Common\ValidationRules.cs" />
     <Compile Include="DataModel\EmployeesModelHelper.cs" />
     <Compile Include="DataModel\Gender.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

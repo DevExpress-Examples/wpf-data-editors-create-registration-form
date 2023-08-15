@@ -1,7 +1,6 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using RegistrationForm.Common;
 using RegistrationForm.DataModel;
 using System;
 using System.ComponentModel;
@@ -100,21 +99,28 @@ namespace RegistrationForm.ViewModel {
                 string confirmPasswordProp = BindableBase.GetPropertyName(() => ConfirmPassword);
                 string birthdayProp = BindableBase.GetPropertyName(() => Birthday);
                 string genderProp = BindableBase.GetPropertyName(() => Gender);
-                if(columnName == firstNameProp) 
-                    return RequiredValidationRule.GetErrorMessage(firstNameProp, FirstName);
-                else if(columnName == lastNameProp)
-                    return RequiredValidationRule.GetErrorMessage(lastNameProp, LastName);
-                else if(columnName == emailProp)
-                    return RequiredValidationRule.GetErrorMessage(emailProp, Email);
-                else if(columnName == passwordProp)
-                    return RequiredValidationRule.GetErrorMessage(passwordProp, Password);
-                else if(columnName == confirmPasswordProp) {
-                    if(!string.IsNullOrEmpty(Password) && Password != ConfirmPassword)
+                if (columnName == firstNameProp) {
+                    if (FirstName == null || string.IsNullOrEmpty(FirstName))
+                        return string.Format("You cannot leave the {0} field empty.", firstNameProp);
+                } else if (columnName == lastNameProp) {
+                    if (LastName == null || string.IsNullOrEmpty(LastName))
+                        return string.Format("You cannot leave the {0} field empty.", lastNameProp);
+                } else if (columnName == emailProp) {
+                    if (Email == null || string.IsNullOrEmpty(Email))
+                        return string.Format("You cannot leave the {0} field empty.", emailProp);
+                } else if (columnName == passwordProp) {
+                    if (Password == null || string.IsNullOrEmpty(Password))
+                        return string.Format("You cannot leave the {0} field empty.", passwordProp);
+                } else if (columnName == confirmPasswordProp) {
+                    if (!string.IsNullOrEmpty(Password) && Password != ConfirmPassword)
                         return "These passwords do not match. Please try again.";
-                } else if(columnName == birthdayProp)
-                    return RequiredValidationRule.GetErrorMessage(birthdayProp, Birthday);
-                else if(columnName == genderProp)
-                    return RequiredValidationRule.GetErrorMessage(genderProp, Gender, -1);
+                } else if (columnName == birthdayProp) {
+                    if (Birthday == null || string.IsNullOrEmpty(Birthday.ToString()))
+                        return string.Format("You cannot leave the {0} field empty.", birthdayProp);
+                } else if (columnName == genderProp) {
+                    if (Gender == -1)
+                        return string.Format("You cannot leave the {0} field empty.", genderProp);
+                }
                 return null;
             }
         }

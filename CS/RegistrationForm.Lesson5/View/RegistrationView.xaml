@@ -6,7 +6,6 @@
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
              xmlns:ViewModel="clr-namespace:RegistrationForm.ViewModel"
              xmlns:DataModel="clr-namespace:RegistrationForm.DataModel"
-             xmlns:Common="clr-namespace:RegistrationForm.Common"
              xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
              xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -29,22 +28,14 @@
                     <dxe:TextEdit NullText="FIRST" ValidateOnEnterKeyPressed="True" ValidateOnTextInput="False">
                         <dxe:TextEdit.EditValue>
                             <Binding Path="FirstName" ValidatesOnDataErrors="True"
-                                     UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                                <Binding.ValidationRules>
-                                    <Common:RequiredValidationRule FieldName="First Name"/>
-                                </Binding.ValidationRules>
-                            </Binding>
+                                     UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                         </dxe:TextEdit.EditValue>
                     </dxe:TextEdit>
                 </dxlc:LayoutItem>
                 <dxe:TextEdit VerticalAlignment="Bottom" NullText="LAST">
                     <dxe:TextEdit.EditValue>
                         <Binding Path="LastName" ValidatesOnDataErrors="True"
-                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                            <Binding.ValidationRules>
-                                <Common:RequiredValidationRule FieldName="Last Name"/>
-                            </Binding.ValidationRules>
-                        </Binding>
+                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                     </dxe:TextEdit.EditValue>
                 </dxe:TextEdit>
             </dxlc:LayoutGroup>
@@ -54,11 +45,7 @@
                               MaskIgnoreBlank="True" InvalidValueBehavior="AllowLeaveEditor">
                     <dxe:TextEdit.EditValue>
                         <Binding Path="Email" ValidatesOnDataErrors="True"
-                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                            <Binding.ValidationRules>
-                                <Common:RequiredValidationRule FieldName="Email"/>
-                            </Binding.ValidationRules>
-                        </Binding>
+                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                     </dxe:TextEdit.EditValue>
                 </dxe:TextEdit>
             </dxlc:LayoutItem>
@@ -66,11 +53,7 @@
                 <dxe:PasswordBoxEdit>
                     <dxe:PasswordBoxEdit.EditValue>
                         <Binding Path="Password" ValidatesOnDataErrors="True"
-                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                            <Binding.ValidationRules>
-                                <Common:RequiredValidationRule FieldName="Password"/>
-                            </Binding.ValidationRules>
-                        </Binding>
+                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                     </dxe:PasswordBoxEdit.EditValue>
                 </dxe:PasswordBoxEdit>
             </dxlc:LayoutItem>
@@ -83,11 +66,7 @@
                               MinValue="{Binding MinBirthday}" MaxValue="{Binding MaxBirthday}">
                     <dxe:DateEdit.EditValue>
                         <Binding Path="Birthday" ValidatesOnDataErrors="True"
-                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                            <Binding.ValidationRules>
-                                <Common:RequiredValidationRule FieldName="Birthday"/>
-                            </Binding.ValidationRules>
-                        </Binding>
+                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                     </dxe:DateEdit.EditValue>
                     <dxe:DateEdit.StyleSettings>
                         <dxe:DateEditPickerStyleSettings/>
@@ -100,11 +79,7 @@
                                   ValueMember="ID" DisplayMember="Description">
                     <dxe:ComboBoxEdit.EditValue>
                         <Binding Path="Gender" ValidatesOnDataErrors="True"
-                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
-                            <Binding.ValidationRules>
-                                <Common:RequiredValidationRule FieldName="Gender"/>
-                            </Binding.ValidationRules>
-                        </Binding>
+                                 UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
                     </dxe:ComboBoxEdit.EditValue>
                     <dxe:ComboBoxEdit.NullValue>
                         <sys:Int32>-1</sys:Int32>
