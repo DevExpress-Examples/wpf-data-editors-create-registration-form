@@ -1,7 +1,6 @@
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.DataAnnotations
 Imports DevExpress.Mvvm.POCO
-Imports RegistrationForm.Common
 Imports RegistrationForm.DataModel
 Imports System
 Imports System.ComponentModel
@@ -117,19 +116,19 @@ Namespace RegistrationForm.ViewModel
                 Dim birthdayProp As String = BindableBase.GetPropertyName(Function() Birthday)
                 Dim genderProp As String = BindableBase.GetPropertyName(Function() Gender)
                 If Equals(columnName, firstNameProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(firstNameProp, FirstName)
+                    If Equals(FirstName, Nothing) OrElse String.IsNullOrEmpty(FirstName) Then Return String.Format("You cannot leave the {0} field empty.", firstNameProp)
                 ElseIf Equals(columnName, lastNameProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(lastNameProp, LastName)
+                    If Equals(LastName, Nothing) OrElse String.IsNullOrEmpty(LastName) Then Return String.Format("You cannot leave the {0} field empty.", lastNameProp)
                 ElseIf Equals(columnName, emailProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(emailProp, Email)
+                    If Equals(Email, Nothing) OrElse String.IsNullOrEmpty(Email) Then Return String.Format("You cannot leave the {0} field empty.", emailProp)
                 ElseIf Equals(columnName, passwordProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(passwordProp, Password)
+                    If Equals(Password, Nothing) OrElse String.IsNullOrEmpty(Password) Then Return String.Format("You cannot leave the {0} field empty.", passwordProp)
                 ElseIf Equals(columnName, confirmPasswordProp) Then
                     If Not String.IsNullOrEmpty(Password) AndAlso Not Equals(Password, ConfirmPassword) Then Return "These passwords do not match. Please try again."
                 ElseIf Equals(columnName, birthdayProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(birthdayProp, Birthday)
+                    If Birthday Is Nothing OrElse String.IsNullOrEmpty(Birthday.ToString()) Then Return String.Format("You cannot leave the {0} field empty.", birthdayProp)
                 ElseIf Equals(columnName, genderProp) Then
-                    Return RequiredValidationRule.GetErrorMessage(genderProp, Gender, -1)
+                    If Gender = -1 Then Return String.Format("You cannot leave the {0} field empty.", genderProp)
                 End If
 
                 Return Nothing

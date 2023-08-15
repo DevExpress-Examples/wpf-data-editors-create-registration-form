@@ -148,7 +148,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Common\ValidationRules.vb" />
     <Compile Include="DataModel\EmployeesModelHelper.vb" />
     <Compile Include="DataModel\Gender.vb" />
     <Compile Include="ViewModel\MainViewModel.vb" />
