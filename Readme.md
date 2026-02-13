@@ -99,7 +99,7 @@ This project uses the [IDataErrorInfo](https://learn.microsoft.com/en-us/dotnet/
 
 * [Lesson 5 - Implement Input Validation using IDataErrorInfo](https://docs.devexpress.com/WPF/17694/controls-and-libraries/data-editors/getting-started/how-to-create-a-registration-form/lesson-5-implement-input-validation-using-idataerrorinfo)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-data-editors-create-registration-form&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-data-editors-create-registration-form&~~~was_helpful=no)
 
